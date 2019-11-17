@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Slab:400,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <svg style="display: none">
+        <symbol id="arrow--left" viewBox="0 0 129 129">
+            <g>
+                <path
+                    d="m88.6,121.3c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2c1.6-1.6 1.6-4.2 0-5.8l-51-51 51-51c1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8,0l-54,53.9c-1.6,1.6-1.6,4.2 0,5.8l54,53.9z" />
+            </g>
+        </symbol>
+
+        <symbol id="arrow--right" viewBox="0 0 129 129">
+            <g>
+                <path
+                    d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" />
+            </g>
+        </symbol>
+
+
+        <symbol id="facebook" viewBox="0 0 96.124 96.123">
+            <g>
+                <path
+                    d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803
+                        c0,1.083,0.878,1.96,1.96,1.96h12.533v39.876c0,1.083,0.877,1.96,1.96,1.96h16.352c1.083,0,1.96-0.878,1.96-1.96V54.287h14.654
+                        c1.083,0,1.96-0.877,1.96-1.96l0.006-15.803c0-0.52-0.207-1.018-0.574-1.386c-0.367-0.368-0.867-0.575-1.387-0.575H56.842v-9.246
+                        c0-4.444,1.059-6.7,6.848-6.7l8.397-0.003c1.082,0,1.959-0.878,1.959-1.96V1.98C74.046,0.899,73.17,0.022,72.089,0.02z" />
+            </g>
+        </symbol>
+
+        <symbol id="google" viewBox="0 0 604.35 604.35">
+            <g>
+                <path d="M516.375,255v-76.5h-51V255h-76.5v51h76.5v76.5h51V306h76.5v-51H516.375z M320.025,341.7l-28.051-20.4
+                    c-10.2-7.649-20.399-17.85-20.399-35.7s12.75-33.15,25.5-40.8c33.15-25.5,66.3-53.55,66.3-109.65c0-53.55-33.15-84.15-51-99.45
+                    h43.35l30.6-35.7h-158.1c-112.2,0-168.3,71.4-168.3,147.9c0,58.65,45.9,122.4,127.5,122.4h20.4c-2.55,7.65-10.2,20.4-10.2,33.15
+                    c0,25.5,10.2,35.7,22.95,51c-35.7,2.55-102,10.2-150.45,40.8c-45.9,28.05-58.65,66.3-58.65,94.35
+                    c0,58.65,53.55,114.75,168.3,114.75c137.7,0,204.001-76.5,204.001-150.449C383.775,400.35,355.725,372.3,320.025,341.7z
+                    M126.225,109.65c0-56.1,33.15-81.6,68.85-81.6c66.3,0,102,89.25,102,140.25c0,66.3-53.55,79.05-73.95,79.05
+                    C159.375,247.35,126.225,168.3,126.225,109.65z M218.024,568.65c-84.15,0-137.7-38.25-137.7-94.351c0-56.1,51-73.95,66.3-81.6
+                    c33.15-10.2,76.5-12.75,84.15-12.75s12.75,0,17.85,0c61.2,43.35,86.7,61.2,86.7,102C335.324,530.4,286.875,568.65,218.024,568.65z
+                    " />
+            </g>
+        </symbol>
+
+        <symbol id="twitter" viewBox="0 0 512 512">
+            <g>
+                <path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
+                        c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
+                        c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
+                        c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152
+                        c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792
+                        c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44
+                        C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568
+                        C480.224,136.96,497.728,118.496,512,97.248z" />
+            </g>
+        </symbol>
+
+        <symbol id="link" viewBox="0 0 430.117 430.117">
+            <g>
+                <path d="M430.117,261.543V420.56h-92.188V272.193c0-37.271-13.334-62.707-46.703-62.707
+                        c-25.473,0-40.632,17.142-47.301,33.724c-2.432,5.928-3.058,14.179-3.058,22.477V420.56h-92.219c0,0,1.242-251.285,0-277.32h92.21
+                        v39.309c-0.187,0.294-0.43,0.611-0.606,0.896h0.606v-0.896c12.251-18.869,34.13-45.824,83.102-45.824
+                        C384.633,136.724,430.117,176.361,430.117,261.543z M52.183,9.558C20.635,9.558,0,30.251,0,57.463
+                        c0,26.619,20.038,47.94,50.959,47.94h0.616c32.159,0,52.159-21.317,52.159-47.94C103.128,30.251,83.734,9.558,52.183,9.558z
+                        M5.477,420.56h92.184v-277.32H5.477V420.56z" />
+            </g>
+        </symbol>
+
+
+    </svg>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+
+                <div class="header__logo">
+                    <img src="images/logo.png" alt="">
+                </div>
+
+                <nav class="nav">
+                    <a href="#" class="header__link" data-scrol="#home">Home</a>
+                    <a href="#" class="header__link" data-scrol="#services">Services</a>
+                    <a href="#" class="header__link" data-scrol="#about">About</a>
+                    <a href="#" class="header__link" data-scrol="#works">Works</a>
+                    <a href="#" class="header__link" data-scrol="#blog">Blog</a>
+                    <a href="#" class="header__link" data-scrol="#clients">Clients</a>
+                    <a href="#" class="header__link" data-scrol="#contacts">Contact</a>
+                </nav>
+                <button class="burger" type="button">
+                    <span class="burger__item">
+
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!--header-->
+
+    <div class="intro" id="home">
+
+        <div class="container">
+            <div class="intro__inner">
+                <h1 class="intro__title">
+                    Welcome to STARTUP
+                </h1>
+
+                <h2 class="intro__subtitle">
+                    Your Favourite Creative Agency Template
+                </h2>
+
+                <a href="#" class="intro__link">Get Started</a>
+            </div>
+        </div>
+
+    </div>
+    <!--Intro-->
+
+    <div class="services" id='services'>
+        <div class="container">
+
+            <h4 class="servicaes__title">
+                Services
+            </h4>
+
+            <div class="servicaes__text">
+                We offer ipsum dolor sit amet, consetetur sadipscing elitr amet
+            </div>
+
+            <div class="services__inner">
+
+                <div class="services__item">
+
+                    <div class="servicaes__item__icon">
+                        <img src="images/icon1.png" alt="">
+                    </div>
+
+                    <div class="services__item__title">
+                        Clean Typography
+                    </div>
+
+                    <div class="servuces__item__text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Minima maxime quam architecto quo inventore harum ex magni,
+                        dicta impedit. Lorem ipsum.
+                    </div>
+                </div>
+
+                <div class="services__item">
+
+                    <div class="servicaes__item__icon">
+                        <img src="images/icon2.png" alt="">
+                    </div>
+
+                    <div class="services__item__title">
+                        Clean Typography
+                    </div>
+
+                    <div class="servuces__item__text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Minima maxime quam architecto quo inventore harum ex magni,
+                        dicta impedit. Lorem ipsum.
+                    </div>
+                </div>
+
+                <div class="services__item">
+
+                    <div class="servicaes__item__icon">
+                        <img src="images/icon3.png" alt="">
+                    </div>
+
+                    <div class="services__item__title">
+                        Clean Typography
+                    </div>
+
+                    <div class="servuces__item__text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Minima maxime quam architecto quo inventore harum ex magni,
+                        dicta impedit. Lorem ipsum.
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <!--Services-------------------------------------------------------------------->
+
+    <div class="about" id='about'>
+        <div class="container">
+            <h4 class="about__title">
+                About Us
+            </h4>
+
+            <div class="about__text">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet
+            </div>
+
+            <div class="about__inner__text">
+                <div class="about__inner__text__first" id='text'>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sediam nonumy eirmod tempor invidunt ut labore et dolore aliquyam erat,
+                    sed diam voluptua. At vero eos et accusam et justo dolores et ea rebum.
+                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet. Lorem ipsum dolor et dolore aliquyam erat. Lorem ipsum dolor
+                    sit amet. Lorem ipsum eat.
+                </div>
+
+                <div class="about__inner__text__second" id='text'>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sediam nonumy eirtempor invidunt ut labore et dolore aliquyam erat,
+                    sed diam voluptua. At vero eos eaccusam et justo dolores et ea rebum.
+                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet. Lorem ipsum dolor et dolore aliquyam erat.
+                    Loreipsum dolor sit amet. Lorem ipsum dolor et.
+                </div>
+            </div>
+
+            <div class="viewport__container">
+
+                <a href='#' target="_blank" class='about__btn prev__btn'>
+                    <svg class="btn">
+                        <use xlink:href="#arrow--left"></use>
+                    </svg>
+                </a>
+
+                <a href='#' target="_blank" class='about__btn next__btn'>
+                    <svg class="btn">
+                        <use xlink:href="#arrow--right"></use>
+                    </svg>
+                </a>
+
+                <!--Лента-->
+                <div class="viewport">   
+
+                <div class="about__inner">
+
+                    <div class="about__inner__item">
+
+                        <div class="about__img">
+                            <img src="images/man1.jpg" alt="">
+                            <div class="about__img__content">
+
+                                <div class="about__social">
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__face">
+                                            <use xlink:href="#facebook"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__goog">
+                                            <use xlink:href="#google"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__twit">
+                                            <use xlink:href="#twitter"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__link">
+                                            <use xlink:href="#link"></use>
+                                        </svg>
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="about__inner__name">
+                            Md. Khalil Uddin
+                        </div>
+
+                        <div class="about__inner__work">
+                            Head of Ideas
+                        </div>
+                    </div>
+
+                    <div class="about__inner__item">
+                        <div class="about__img">
+                            <img src="images/man2.jpg" alt="">
+                            <div class="about__img__content">
+
+                                <div class="about__social">
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__face">
+                                            <use xlink:href="#facebook"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__goog">
+                                            <use xlink:href="#google"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__twit">
+                                            <use xlink:href="#twitter"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__link">
+                                            <use xlink:href="#link"></use>
+                                        </svg>
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="about__inner__name">
+                            Md. Khalil Uddin
+                        </div>
+
+                        <div class="about__inner__work">
+                            Head of Ideas
+                        </div>
+                    </div>
+
+                    <div class="about__inner__item">
+                        <div class="about__img">
+                            <img src="images/man3.jpg" alt="">
+                            <div class="about__img__content">
+
+                                <div class="about__social">
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__face">
+                                            <use xlink:href="#facebook"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__goog">
+                                            <use xlink:href="#google"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__twit">
+                                            <use xlink:href="#twitter"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__link">
+                                            <use xlink:href="#link"></use>
+                                        </svg>
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="about__inner__name">
+                            Md. Khalil Uddin
+                        </div>
+
+                        <div class="about__inner__work">
+                            Head of Ideas
+                        </div>
+                    </div>
+
+                    <div class="about__inner__item">
+                        <div class="about__img">
+                            <img src="images/man4.jpg" alt="">
+                            <div class="about__img__content">
+
+                                <div class="about__social">
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__face">
+                                            <use xlink:href="#facebook"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__goog">
+                                            <use xlink:href="#google"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__twit">
+                                            <use xlink:href="#twitter"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__link">
+                                            <use xlink:href="#link"></use>
+                                        </svg>
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="about__inner__name">
+                            Md. Khalil Uddin
+                        </div>
+
+                        <div class="about__inner__work">
+                            Head of Ideas
+                        </div>
+                    </div>
+                </div>
+
+                <!--второй иннер-->
+
+                <div class="about__inner">
+
+                    <div class="about__inner__item">
+
+                        <div class="about__img">
+                            <img src="images/man1.jpg" alt="">
+                            <div class="about__img__content">
+
+                                <div class="about__social">
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__face">
+                                            <use xlink:href="#facebook"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__goog">
+                                            <use xlink:href="#google"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__twit">
+                                            <use xlink:href="#twitter"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__link">
+                                            <use xlink:href="#link"></use>
+                                        </svg>
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="about__inner__name">
+                            Md. Khalil Uddin
+                        </div>
+
+                        <div class="about__inner__work">
+                            Head of Ideas
+                        </div>
+                    </div>
+
+                    <div class="about__inner__item">
+                        <div class="about__img">
+                            <img src="images/man2.jpg" alt="">
+                            <div class="about__img__content">
+
+                                <div class="about__social">
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__face">
+                                            <use xlink:href="#facebook"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__goog">
+                                            <use xlink:href="#google"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__twit">
+                                            <use xlink:href="#twitter"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__link">
+                                            <use xlink:href="#link"></use>
+                                        </svg>
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="about__inner__name">
+                            Md. Khalil Uddin
+                        </div>
+
+                        <div class="about__inner__work">
+                            Head of Ideas
+                        </div>
+                    </div>
+
+                    <div class="about__inner__item">
+                        <div class="about__img">
+                            <img src="images/man3.jpg" alt="">
+                            <div class="about__img__content">
+
+                                <div class="about__social">
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__face">
+                                            <use xlink:href="#facebook"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__goog">
+                                            <use xlink:href="#google"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__twit">
+                                            <use xlink:href="#twitter"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__link">
+                                            <use xlink:href="#link"></use>
+                                        </svg>
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="about__inner__name">
+                            Md. Khalil Uddin
+                        </div>
+
+                        <div class="about__inner__work">
+                            Head of Ideas
+                        </div>
+                    </div>
+
+                    <div class="about__inner__item">
+                        <div class="about__img">
+                            <img src="images/man4.jpg" alt="">
+                            <div class="about__img__content">
+
+                                <div class="about__social">
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__face">
+                                            <use xlink:href="#facebook"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__goog">
+                                            <use xlink:href="#google"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__twit">
+                                            <use xlink:href="#twitter"></use>
+                                        </svg>
+                                    </a>
+
+                                    <a href='#' target="_blank" class='links'>
+                                        <svg class="link__link">
+                                            <use xlink:href="#link"></use>
+                                        </svg>
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="about__inner__name">
+                            Md. Khalil Uddin
+                        </div>
+
+                        <div class="about__inner__work">
+                            Head of Ideas
+                        </div>
+                    </div>
+                </div><!--закончился второй иннер-->
+            </div><!--закончилась лента-->
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="works" id='works'>
+        <div class="container">
+            <h4 class="works__title works__header">
+                Latest works
+            </h4>
+
+            <div class="works__menu works__header">
+                <nav class="nav__menu">
+                    <a href="#">All</a>
+                    <a href="#">Branding</a>
+                    <a href="#">Design</a>
+                    <a href="#">Development</a>
+                    <a href="#">Strategy</a>
+                </nav>
+            </div>
+
+            <div class="works__stend">
+                <div class="works__item card__first">
+                    <img src="images/works1.png" alt="">
+
+                    <div class="works__content">
+                        <div class="works__item__title">
+                            Hair Dresser
+                        </div>
+
+                        <div class="works__text">
+                            Branding
+                        </div>
+
+                        <div class="works__button">
+                            view
+                            <div class="square"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="works__item card__first">
+                    <img src="images/works2.png" alt="">
+                    <div class="works__content">
+                        <div class="works__item__title">
+                            Hair Dresser
+                        </div>
+
+                        <div class="works__text">
+                            Branding
+                        </div>
+
+                        <div class="works__button">
+                            view
+                            <div class="square"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="works__item card__first">
+                    <img src="images/works3.png" alt="">
+                    <div class="works__content">
+                        <div class="works__item__title">
+                            Hair Dresser
+                        </div>
+
+                        <div class="works__text">
+                            Branding
+                        </div>
+
+                        <div class="works__button">
+                            view
+                            <div class="square"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="works__item card__second">
+                    <img src="images/works4.png" alt="">
+                    <div class="works__content">
+                        <div class="works__item__title">
+                            Hair Dresser
+                        </div>
+
+                        <div class="works__text">
+                            Branding
+                        </div>
+
+                        <div class="works__button">
+                            view
+                            <div class="square"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="works__item card__second">
+                    <img src="images/works5.png" alt="">
+                    <div class="works__content">
+                        <div class="works__item__title">
+                            Hair Dresser
+                        </div>
+
+                        <div class="works__text">
+                            Branding
+                        </div>
+
+                        <div class="works__button">
+                            view
+                            <div class="square"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="works__item card__second">
+                    <img src="images/works6.png" alt="">
+                    <div class="works__content">
+                        <div class="works__item__title">
+                            Hair Dresser
+                        </div>
+
+                        <div class="works__text">
+                            Branding
+                        </div>
+
+                        <div class="works__button">
+                            view
+                            <div class="square"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="works__item card__third">
+                    <img src="images/works7.png" alt="">
+                    <div class="works__content">
+                        <div class="works__item__title">
+                            Hair Dresser
+                        </div>
+
+                        <div class="works__text">
+                            Branding
+                        </div>
+
+                        <div class="works__button">
+                            view
+                            <div class="square"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="works__item card__third">
+                    <img src="images/works8.png" alt="">
+                    <div class="works__content">
+                        <div class="works__item__title">
+                            Hair Dresser
+                        </div>
+
+                        <div class="works__text">
+                            Branding
+                        </div>
+
+                        <div class="works__button">
+                            view
+                            <div class="square"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="works__item card__third">
+                    <img src="images/works9.png" alt="">
+                    <div class="works__content">
+                        <div class="works__item__title">
+                            Hair Dresser
+                        </div>
+
+                        <div class="works__text">
+                            Branding
+                        </div>
+
+                        <div class="works__button">
+                            view
+                            <div class="square"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="banner">
+        <img src="images/banner.jpg" alt="" class='banner__img'>
+
+        <div class="banner__content">
+            <div class="banner__question">
+                Do you like OUR WORK so far?
+            </div>
+
+            <div class="banner__happy">
+                Let's talk about YOUR PROJECT!
+            </div>
+
+            <a href="" class="intro__link">
+                get in touch
+            </a>
+        </div>
+    </div>
+
+    <div class="news" id='blog'>
+        <div class="container">
+            <h4 class="about__title">
+                Recent blog posts
+            </h4>
+
+            <div class="about__text">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet
+            </div>
+
+            <div class="news__inner">
+                <div class="news__inner__img">
+                    <img src="images/news1.jpg" alt="">
+                </div>
+                <div class="news__inner__content">
+                    <div class="news__inner__info">
+                        <div class="chislo">
+                            <p>18</p><span>oct</span>
+                        </div>
+                        <div class="info">
+                            <p class='news__inner__info__title'>Startup ideas needs to be funded</p>
+                            <p class='news__inner__info__subtitle'>By <span>Khalil</span> Uddin in
+                                <span>Development</span> </p>
+                        </div>
+                    </div>
+
+                    <div class="news__inner__text">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                        sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat,
+                        sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum.
+                        Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+                        ipsum dolor sit am Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                        sed diam nonumy eirmod tempor invidulabore et dolore aliquyam erat, sed diam
+                    </div>
+
+                    <a href="#" class="news__inner__link">Read More</a>
+                </div>
+            </div>
+
+            <div class="news__inner">
+                <div class="news__inner__img">
+                    <img src="images/news2.jpg" alt="">
+                </div>
+                <div class="news__inner__content">
+                    <div class="news__inner__info">
+                        <div class="chislo">
+                            <p>18</p><span>oct</span>
+                        </div>
+                        <div class="info">
+                            <p class='news__inner__info__title'>Startup ideas needs to be funded</p>
+                            <p class='news__inner__info__subtitle'>By <span>Khalil</span> Uddin in
+                                <span>Development</span> </p>
+                        </div>
+                    </div>
+
+                    <div class="news__inner__text">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                        sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat,
+                        sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum.
+                        Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+                        ipsum dolor sit am Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                        sed diam nonumy eirmod tempor invidulabore et dolore aliquyam erat, sed diam
+                    </div>
+
+                    <a href="#" class="news__inner__link">Read More</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="slider" id='clients'>
+        <div class="wrapper">
+            <div class="slider__inner">
+                <div class="slider__brands">
+                    <img src="images/slide1.png" alt="" class="brands">
+                    <img src="images/slide2.png" alt="" class="brands">
+                    <img src="images/slide3.png" alt="" class="brands">
+                    <img src="images/slide4.png" alt="" class="brands">
+                    <img src="images/slide5.png" alt="" class="brands">
+                </div>
+
+                <div class="slider__container">
+                    <div id="first" class='one'>
+                        <div class="slider__text">
+                            Hvaing placeat facere possimus, omnis voluptas assumenda est,
+                            omnis dolor repellendus. Temporibus autem quibusdam et aut officiis
+                            debitis aut rerum”
+                        </div>
+
+                        <div class="slider__author">
+                            John Doe, Google Inc.
+                        </div>
+                    </div>
+
+                    <div id="second" class='one'>
+                        <div class="slider__text">
+                            Hvaing placeat facere possimus, omnis voluptas assumenda est,
+                            omnis dolor repellendus. Temporibus autem quibusdam et aut officiis
+                            debitis aut rerum” And I want to give for you my mind.
+                        </div>
+
+                        <div class="slider__author">
+                            Romanyuk Ilya, Yandex Inc.
+                        </div>
+                    </div>
+
+                    <div id="third" class='one'>
+                        <div class="slider__text">
+                            Hvaing placeat facere possimus, omnis voluptas assumenda est,
+                            omnis dolor repellendus.
+                        </div>
+
+                        <div class="slider__author">
+                            Grishina Daria, Mail Inc.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider__dotted">
+                    <div class="point" data-target="#first"></div>
+                    <div class="point" data-target="#second"></div>
+                    <div class="point point__active" data-target="#third"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer" id='contacts'>
+        <div class="footer__icons">
+            <a href='#' target="_blank" class='footer__links facebook'>
+                <svg class="link__face">
+                    <use xlink:href="#facebook"></use>
+                </svg>
+            </a>
+
+            <a href='#' target="_blank" class='footer__links google'>
+                <svg class="link__goog">
+                    <use xlink:href="#google"></use>
+                </svg>
+            </a>
+
+            <a href='#' target="_blank" class='footer__links twitter'>
+                <svg class="link__twit">
+                    <use xlink:href="#twitter"></use>
+                </svg>
+            </a>
+
+            <a href='#' target="_blank" class='footer__links linkedin'>
+                <svg class="link__link">
+                    <use xlink:href="#link"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <button type="button" class='buttonTop'>On tops</button>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
